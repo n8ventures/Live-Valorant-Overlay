@@ -31,7 +31,8 @@ socket_io.on('kill_self', kill_self)
 
 
 def get_hwnd():
-    return win32gui.FindWindow(None, "VALORANT  ")
+    #return win32gui.FindWindow(None, "VALORANT  ") 
+    return win32gui.GetDesktopWindow()
 
 
 def convert(o):
