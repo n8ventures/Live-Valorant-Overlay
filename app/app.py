@@ -96,8 +96,7 @@ def after_connect():
 def new_event(data):
     global match_details
     print("new_event", data)
-    match_details = match_utils.update_match_details(
-        match_details, data["event"])
+    match_details = match_utils.update_match_details(match_details, data["event"])
     print("Sending new match_details")
     emit('receive_details',  {
          'match_details': match_details}, broadcast=True, include_self=False)
