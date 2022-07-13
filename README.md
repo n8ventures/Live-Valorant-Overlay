@@ -328,10 +328,16 @@ You can compare both the branches to see what changes have to be made in order t
 - The current configuration of all the modules returns the bottom part as an empty array or a null object. Once you specify the pixels and it starts working, you don't need to do much work to aggregate the bottom results with the top.
 
   
+## BUGS
 
+1. HEALTH FEATURE IS STILL EXPERIMENTAL. 
+
+2. Detecting Ares outputs as Phantom
+
+3. Detecting Guardian outputs as Phantom
   
 
-## Possible Future Updates
+## Possible Future Updates by the creator, [deepsidh9](https://github.com/deepsidh9/Live-Valorant-Overlay)
 
   
 
