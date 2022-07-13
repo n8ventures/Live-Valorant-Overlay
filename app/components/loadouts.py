@@ -32,7 +32,7 @@ class GetLoadouts():
             result = cv2.matchTemplate(
                 image, current_template, cv2.TM_CCOEFF_NORMED)
             max_location = cv2.minMaxLoc(result)[1]
-            if max_location > 0.75:
+            if max_location > 0.80: #testing to fix weapon read - original value: 0.75
                 identified_weapon = template["weapon"]
 
         return identified_weapon
