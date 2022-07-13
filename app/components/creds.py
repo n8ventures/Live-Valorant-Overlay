@@ -56,8 +56,9 @@ class GetCreds():
     def get_creds(self, frame):
         all_ultimates = {"top": [], "bottom": []}
         all_ultimates["top"] = self.process_frame(frame, "top")
+        all_ultimates["bottom"] = self.process_frame(frame,"bottom")
         print(all_ultimates)
-        # all_ultimates["bottom"] = self.process_frame(frame,"bottom")
+
 
 
 if __name__ == "__main__":

@@ -13,6 +13,7 @@ from scoreboard_detector import ScoreBoardDetector
 from shields import GetShields
 from spike import GetSpike
 from ultimates import GetUltimates
+from creds import GetCreds #importing creds
 
 warnings.filterwarnings("ignore")
 
@@ -32,6 +33,7 @@ class LiveDetails():
         self.ultimate_helper = GetUltimates()
         self.old_score = [0, 0]
         self.match_details = {}
+        self.creds_helper = GetCreds() #Importing creds
 
     def get_live_details(self, frame):
         # get score from in-game api- discard ocr below
@@ -54,11 +56,12 @@ class LiveDetails():
             shields = self.shield_helper.get_shields(frame)
             loadouts = self.loadout_helper.get_loadouts(frame)
             scoreboard_agents = self.scoreboard_agents_helper.get_agents(frame)
+            credits = self.creds_helper.get_creds(frame) #importing creds
             agents_with_loadouts_shields={}
             agents_with_loadouts_shields["blue"] = list(
-                zip(scoreboard_agents["top"], loadouts["top"], shields["top"], agents_ultimate_points["top"]))
+                zip(scoreboard_agents["top"], loadouts["top"], shields["top"], agents_ultimate_points["top"], credits["top"]))
             agents_with_loadouts_shields["red"] = list(
-                zip(scoreboard_agents["bottom"], loadouts["bottom"], shields["bottom"], agents_ultimate_points["bottom"]))
+                zip(scoreboard_agents["bottom"], loadouts["bottom"], shields["bottom"], agents_ultimate_points["bottom"], credits["bottom"]))
 
             return({"score": "score", "spike_status": spike_status,
                     "agents_with_loadouts_shields": agents_with_loadouts_shields,
