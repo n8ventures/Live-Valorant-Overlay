@@ -39,6 +39,8 @@ function populateOverlay(matchDetails){
                 console.log("Shield Icons/"+matchDetails[side][agent]["shield"]+".png")
                 shieldImage.src =  "Shield Icons/"+matchDetails[side][agent]["shield"]+".png"
             }
+            else{shieldImage.src = "missing.png"
+            }
             
             var ultimateContainer = document.createElement('div')
             ultimateContainer.className = "ultimateContainer"
@@ -56,29 +58,33 @@ function populateOverlay(matchDetails){
                     ultimatePointsSpan.innerHTML=matchDetails[side][agent]["current_ultimate_points"]+"/"+matchDetails[side][agent]["required_ultimate_points"]
                 }
             }else{
-                ultimatePointsSpan.innerHTML="NA"
+                ultimatePointsSpan.innerHTML=""
             }
-            // var healthSpan = document.createElement('span');
-            // if(matchDetails[side][agent]["health"]){
-            //     healthSpan.innerHTML = matchDetails[side][agent]["health"]
-            //     // shieldHealthContainerDiv.style.background = "linear-gradient(to top, red "+matchDetails[side][agent]["health"]+"%, white 0%);" 
-            // }
-            // else{
-            //     healthSpan.innerHTML = "__"
-            //     // shieldHealthContainerDiv.style.background = "linear-gradient(to top, red 0%, white 0%);"
-            // }
-
+            //health feat
+            var healthSpan = document.createElement('span');
+            if(matchDetails[side][agent]["health"]){
+                healthSpan.innerHTML = matchDetails[side][agent]["health"]
+                shieldHealthContainerDiv.style.background = "linear-gradient(to top, red "+matchDetails[side][agent]["health"]+"%, white 0%);" 
+            }
+            else{
+                healthSpan.innerHTML = "__"
+                 shieldHealthContainerDiv.style.background = "linear-gradient(to top, red 0%, white 0%);"
+            }
+            //-end
             shieldHealthContainerDiv.appendChild(shieldImage)
-            // shieldHealthContainerDiv.appendChild(healthSpan)
+            
             shieldHealthContainerDiv.appendChild(ultimateContainer)
             shieldHealthContainerDiv.appendChild(ultimatePointsSpan)
+
+            shieldHealthContainerDiv.appendChild(healthSpan)
 
             var weaponImageElement = document.createElement('img')
             weaponImageElement.src =  ""
             if(matchDetails[side][agent]["weapon"]){
                 weaponImageElement.src =  "Weapon Images/" + matchDetails[side][agent]["weapon"]+".png"
             }
-            
+            else{weaponImageElement.src = "missing.png"
+            }
             
             var agentNameSpan = document.createElement('span');
             if(matchDetails[side][agent]["name"].length>8){ 

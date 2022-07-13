@@ -66,7 +66,9 @@ class GetHealth():
     def get_health(self, frame):
         agents_health_points = {"left": [], "right": []}
         agents_health_points["left"] = self.process_frame(frame, "left")
-        # agents_health_points["right"] = self.process_frame(frame,"right")
+        #right frame health points
+        agents_health_points["right"] = self.process_frame(frame,"right")
+        #-end
         return agents_health_points
 
 
