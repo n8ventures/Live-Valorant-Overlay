@@ -1,9 +1,14 @@
 
-# Valorant Live Overlay
+# Valorant Live Overlay - DEBUG/TESTING BRANCH
 
   
-
+FOR STABLE BRANCH, VISIT [1920x1080 BRANCH](https://github.com/n8ventures/Live-Valorant-Overlay)
   
+
+### Valorant Live Overlay
+
+
+
 
 An Overlay proof-of-concept Application for Valorant giving information in real-time about current match, spike and player status(dead/alive, weapons, ultimate points, shields etc.)
 
@@ -23,9 +28,8 @@ An Overlay proof-of-concept Application for Valorant giving information in real-
 
   
 
--  [1920x1080](https://github.com/deepsidh9/Live-Valorant-Overlay/tree/1920x1080) **OR**  [1920x1200](https://github.com/deepsidh9/Live-Valorant-Overlay/)
+-  1920x1080
 
-  
 
 - "Fill" Mode
 

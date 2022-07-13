@@ -1,5 +1,6 @@
 .topContainer {
     height: 50%;
+    
 }
 
 .bottomContainer {
@@ -60,6 +61,7 @@
   display: flex;
   align-items: center;
   padding: 5px;
+
 }
 
 .shieldHealthContainer{
@@ -131,8 +133,8 @@
     position: fixed; /* Sit on top of the screen */
     z-index: 1; /* Add a z-index if needed */
     left: 50%; /* Center the snackbar */
-    bottom: -100px; /* 30px from the bottom */
-    height:300px;
+    top: 0px; /* 30px from the bottom */
+    height:250px;
     font-family:'Maven Pro';
     font-weight: 700;
   }
@@ -142,30 +144,49 @@
     visibility: visible; /* Show the snackbar */
     /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
     However, delay the fade out process for 2.5 seconds */
-    -webkit-animation: fadein 0.25s, fadeout 0.25s 3s;
-    animation: fadein 0.25s, fadeout 0.25s 3s;
+    -webkit-animation: fadein 0.25s, fadeout 0.25s ;
+    animation: fadein 0.25s, fadeout 0.25s ;
   }
+
+
   
   /* Animations to fade the snackbar in and out */
   @-webkit-keyframes fadein {
-    from {bottom: -200px; opacity: 0;}
-    to {bottom: -100px; opacity: 1;}
-
-    
-    
+    from {top: -300px; opacity: 0;}
+    to {top: 0px; opacity: 1;}
   }
   
   @keyframes fadein {
-    from {bottom: -200px; opacity: 0;}
-    to {bottom: -100px; opacity: 1;}
+    from {top: -300px; opacity: 0;}
+    to {top: 0px; opacity: 1;}
   }
-  
+ 
   @-webkit-keyframes fadeout {
-    from {bottom: -100px; opacity: 1;}
-    to {bottom: -200px; opacity: 0;}
+    from {top: 0px; opacity: 1;}
+    to {top: -300px; opacity: 0;}
   }
   
   @keyframes fadeout {
-    from {bottom: -100px; opacity: 1;}
-    to {bottom: -200px; opacity: 0;}
+    from {top: 0px; opacity: 1;}
+    to {top: -300px; opacity: 0;}
+  }
+
+  @-webkit-keyframes fadeinright {
+    from {right: -200px; opacity: 0;}
+    to {right: 0px; opacity: 1;}
+  }
+  
+  @keyframes fadeinright {
+    from {right: -200px; opacity: 0;}
+    to {right: 0px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeinleft {
+    from {left: -200px; opacity: 0;}
+    to {left: 0px; opacity: 1;}
+  }
+  
+  @keyframes fadeinleft {
+    from {left: -200px; opacity: 0;}
+    to {left: 0px; opacity: 1;}
   }
