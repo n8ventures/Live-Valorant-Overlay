@@ -38,8 +38,27 @@ class MatchUtils():
                         if agent_information[0].lower() == value["agent"].lower():
                             value["weapon"] = agent_information[1]
                             value["shield"] = agent_information[2]
-                            value["current_ultimate_points"] = agent_information[3]["number"]
-
+                            value["current_ultimate_points"] = agent_information[3]["number"] #TypeError: string indices must be integers
+                            #more info here: 
+                            # Exception in thread Thread-428 (_handle_event_internal):
+                            # Traceback (most recent call last):
+                            # File "C:\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+                            # self.run()
+                            # File "C:\Python310\lib\threading.py", line 953, in run
+                            # self._target(*self._args, **self._kwargs)
+                            # File "C:\Python310\lib\site-packages\socketio\server.py", line 712, in _handle_event_internal
+                            # r = server._trigger_event(data[0], namespace, sid, *data[1:])
+                            # File "C:\Python310\lib\site-packages\socketio\server.py", line 736, in _trigger_event
+                            # return self.handlers[namespace][event](*args)
+                            # File "C:\Python310\lib\site-packages\flask_socketio\__init__.py", line 282, in _handler
+                            # return self._handle_event(handler, message, namespace, sid,
+                            #  File "C:\Python310\lib\site-packages\flask_socketio\__init__.py", line 766, in _handle_event
+                            # ret = handler(*args)
+                            # File "*\Live-Valorant-Overlay\app\app.py", line 99, in new_event       
+                            #  match_details = match_utils.update_match_details(match_details, data["event"])
+                            # File "*\Live-Valorant-Overlay\app\match_utils.py", line 41, in update_match_details
+                            # value["current_ultimate_points"] = agent_information[3]["number"]
+                            # TypeError: string indices must be integers
         return match_details
 
     def switch_sides(self, match_details):
