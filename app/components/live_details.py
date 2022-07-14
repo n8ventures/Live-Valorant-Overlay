@@ -43,30 +43,27 @@ class LiveDetails():
         agents_health["blue"] = agents_health["left"]
         agents_health["red"] = agents_health["right"]
         spike_status = self.spike_helper.get_spike_status(frame)
-        header_agents = self.header_agent_helper.get_agents(
-            frame)
+        header_agents = self.header_agent_helper.get_agents(frame)
         header_agents["blue"] = header_agents["left"]
         header_agents["red"] = header_agents["right"]
-        scoreboard_present = self.scoreboard_detector_helper.detect_scoreboard(
-            frame)
+        scoreboard_present = self.scoreboard_detector_helper.detect_scoreboard(frame)
         print("ScoreBoardDetector", scoreboard_present)
         if scoreboard_present:
-            agents_ultimate_points = self.ultimate_helper.get_ultimate_points(
-                frame)
+            agents_ultimate_points = self.ultimate_helper.get_ultimate_points(frame)
             shields = self.shield_helper.get_shields(frame)
             loadouts = self.loadout_helper.get_loadouts(frame)
             scoreboard_agents = self.scoreboard_agents_helper.get_agents(frame)
-            credits = self.creds_helper.get_creds(frame) #importing creds
+            agent_credits = self.creds_helper.get_creds(frame) #importing creds
             agents_with_loadouts_shields={}
             agents_with_loadouts_shields["blue"] = list(
-                zip(scoreboard_agents["top"], loadouts["top"], shields["top"], agents_ultimate_points["top"], credits["top"]))
+                zip(scoreboard_agents["top"], loadouts["top"], shields["top"], agents_ultimate_points["top"], agent_credits["top"]))
             agents_with_loadouts_shields["red"] = list(
-                zip(scoreboard_agents["bottom"], loadouts["bottom"], shields["bottom"], agents_ultimate_points["bottom"], credits["bottom"]))
+                zip(scoreboard_agents["bottom"], loadouts["bottom"], shields["bottom"], agents_ultimate_points["bottom"], agent_credits["bottom"]))
 
-            return({"score": "score", "spike_status": spike_status,
+            return({"score": score, "spike_status": spike_status,
                     "agents_with_loadouts_shields": agents_with_loadouts_shields,
                     "alive_agents": header_agents, "health_values": agents_health})
-        return({"score": "score", "spike_status": spike_status,
+        return({"score": score, "spike_status": spike_status,
                 "alive_agents": header_agents, "health_values": agents_health})
 
 

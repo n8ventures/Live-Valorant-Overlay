@@ -60,7 +60,23 @@ function populateOverlay(matchDetails){
             }else{
                 ultimatePointsSpan.innerHTML=""
             }
+            //creds implementation
+            var creditsContainer = document.createElement('div')
+            creditsContainer.className = "creditsContainer"
+
+            var creditsSpan = document.createElement('span');
+            if(matchDetails[side][agent]["credits"]){
+                creditsSpan.innerHTML = matchDetails[side][agent]["credits"]
+            }
+            else{
+                creditsSpan.innerHTML="???"
+            }
+            //end
+
             //health feat
+            var healthSpanContainer = document.createElement('div')
+            healthSpanContainer.className = "healthSpanContainer"
+
             var healthSpan = document.createElement('span');
             if(matchDetails[side][agent]["health"]){
                 healthSpan.innerHTML = matchDetails[side][agent]["health"]

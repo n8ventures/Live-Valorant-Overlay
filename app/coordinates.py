@@ -42,7 +42,7 @@ def click_event(event, x, y, flags, params):
 if __name__=="__main__":
  
     # reading the image
-    img = cv2.imread('2.png', 1)
+    img = cv2.imread('./test_images/Tab Images/2.png', 1)
  
     # displaying the image
     cv2.imshow('image', img)

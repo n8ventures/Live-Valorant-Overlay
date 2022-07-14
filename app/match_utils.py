@@ -59,6 +59,7 @@ class MatchUtils():
                             # File "*\Live-Valorant-Overlay\app\match_utils.py", line 41, in update_match_details
                             # value["current_ultimate_points"] = agent_information[3]["number"]
                             # TypeError: string indices must be integers
+                            value["credits"] = agent_information[4]["number"]
         return match_details
 
     def switch_sides(self, match_details):

@@ -37,8 +37,7 @@ class GetUltimates():
         y_end = y_start + 34
         for agent_row in range(0, 5):
             cropped_score_image = frame[y_start:y_end, 854:868]
-            points = self.reader.readtext(self.clean_frame(
-                cropped_score_image), allowlist='0123456789')
+            points = self.reader.readtext(self.clean_frame(cropped_score_image), allowlist='0123456789')
             # print("points",points)
             if not points:
                 points = "READY"
