@@ -60,10 +60,10 @@ class LiveDetails():
             agents_with_loadouts_shields["red"] = list(
                 zip(scoreboard_agents["bottom"], loadouts["bottom"], shields["bottom"], agents_ultimate_points["bottom"]))
 
-            return({"score": "score", "spike_status": spike_status,
+            return({"score": score, "spike_status": spike_status,
                     "agents_with_loadouts_shields": agents_with_loadouts_shields,
                     "alive_agents": header_agents, "health_values": agents_health})
-        return({"score": "score", "spike_status": spike_status,
+        return({"score": score, "spike_status": spike_status,
                 "alive_agents": header_agents, "health_values": agents_health})
 
 
