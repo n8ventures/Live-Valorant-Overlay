@@ -31,9 +31,10 @@ class LiveDetails():
         self.scoreboard_detector_helper = ScoreBoardDetector()
         self.health_helper = GetHealth()
         self.ultimate_helper = GetUltimates()
+        self.creds_helper = GetCreds() #Importing creds
         self.old_score = [0, 0]
         self.match_details = {}
-        self.creds_helper = GetCreds() #Importing creds
+        
 
     def get_live_details(self, frame):
         # get score from in-game api- discard ocr below

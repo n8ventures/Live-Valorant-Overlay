@@ -167,6 +167,7 @@ class GetCoreMatch():
 
     def get_coregame_stats(self):
         response = self.fetch("glz", f"/core-game/v1/matches/{self.get_coregame_match_id()}", "get")
+        print("CORE GAME:", response)
         return response
 
 

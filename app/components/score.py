@@ -11,11 +11,9 @@ class GetScore():
 
     def clean_frame(self, frame):
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        frame = cv2.resize(frame, None, fx=8, fy=8,
-                           interpolation=cv2.INTER_CUBIC)
+        frame = cv2.resize(frame, None, fx=8, fy=8, interpolation=cv2.INTER_CUBIC)
         frame = cv2.bilateralFilter(frame, 9, 75, 75)
-        frame = cv2.threshold(
-            frame, 240, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
+        frame = cv2.threshold(frame, 240, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
         kernel = np.ones((4, 4), np.uint8)
         frame = cv2.dilate(frame, kernel, iterations=1)
         frame = cv2.erode(frame, kernel, iterations=1)
