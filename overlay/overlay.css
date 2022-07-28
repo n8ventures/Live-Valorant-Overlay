@@ -69,7 +69,40 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 60px;
+  min-width: 150px;
+  height: 33.33px;
+  border: 1px solid black;
+  border-width: thin;
+  background-image: linear-gradient(147deg, #000000 0%, #504e2c 74%);
+  color: white;
+  font-family:'Maven Pro';
+  font-weight: 300;
+  border-radius: 5px;
+}
+
+.creditsHealthContainer{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+  height: 33.33px;
+  border: 1px solid black;
+  border-width: thin;
+  background-image: linear-gradient(147deg, #000000 0%, #504e2c 74%);
+  color: white;
+  font-family:'Maven Pro';
+  font-weight: 300;
+  border-radius: 5px;
+}
+
+.agentnamecontainer{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 300px;
+  height: 33.33px;
   border: 1px solid black;
   border-width: thin;
   background-image: linear-gradient(147deg, #000000 0%, #504e2c 74%);
@@ -80,17 +113,17 @@
 }
 
 .shieldHealthContainer span{
-  position: absolute;
+ /*position: absolute; */
   bottom: 0;
-  font-size: 13px;
+  font-size: 25px;
 }
 
 .shieldImage {
   height: 30px;
-  padding-bottom: 40px;
+  /*padding-bottom: 40px; */
 }
 .ultimateContainer{
-  position: absolute;
+  /* position: absolute; */
   bottom: 15;
 }
 .ultimateImage{
@@ -99,11 +132,11 @@
 
 .healthSpanContainer{
   background: linear-gradient(to top, red 100%, white 0%);  
-  bottom: 40;
+  bottom: 40px;
 }
 
 .creditsContainer{
-  bottom: 50;
+  bottom: 50px;
 }
 
 .left-weapon{
