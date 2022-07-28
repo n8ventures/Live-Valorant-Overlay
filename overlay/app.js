@@ -60,6 +60,14 @@ function populateOverlay(matchDetails){
             }else{
                 ultimatePointsSpan.innerHTML=""
             }
+            //seperating credits and health
+            var creditsHealthContainerDiv = document.createElement('div');
+            creditsHealthContainerDiv.className = "creditsHealthContainer"
+
+            //seperating Name
+            var agentnamecontainerDiv = document.createElement('div');
+            agentnamecontainerDiv.className = "agentnamecontainer"
+
             //creds implementation
             var creditsContainer = document.createElement('div')
             creditsContainer.className = "creditsContainer"
@@ -80,19 +88,19 @@ function populateOverlay(matchDetails){
             var healthSpan = document.createElement('span');
             if(matchDetails[side][agent]["health"]){
                 healthSpan.innerHTML = matchDetails[side][agent]["health"]
-                shieldHealthContainerDiv.style.background = "linear-gradient(to top, red "+matchDetails[side][agent]["health"]+"%, white 0%);" 
+                creditsHealthContainerDiv.style.background = "linear-gradient(to top, red "+matchDetails[side][agent]["health"]+"%, white 0%);" 
             }
             else{
                 healthSpan.innerHTML = "__"
-                 shieldHealthContainerDiv.style.background = "linear-gradient(to top, red 0%, white 0%);"
+                creditsHealthContainerDiv.style.background = "linear-gradient(to top, red 0%, white 0%);"
             }
             //-end
             shieldHealthContainerDiv.appendChild(shieldImage)
             
             shieldHealthContainerDiv.appendChild(ultimateContainer)
             shieldHealthContainerDiv.appendChild(ultimatePointsSpan)
-
-            shieldHealthContainerDiv.appendChild(healthSpan)
+            creditsHealthContainerDiv.appendChild(creditsSpan) //Adding Credits to the html
+            creditsHealthContainerDiv.appendChild(healthSpan)
 
             var weaponImageElement = document.createElement('img')
             weaponImageElement.src =  ""
@@ -116,7 +124,7 @@ function populateOverlay(matchDetails){
             else{
                 var brightness= 1
             }
-
+            
             var imageElement = document.createElement('img');
             imageElement.src =agentImageSource
             imageElement.style.filter = "brightness(" +brightness+ ")";
@@ -126,10 +134,11 @@ function populateOverlay(matchDetails){
             if (side=="red"){
                 allInformationDiv.className = "allRightInformation"
                 imageElement.className = "right-agent"
+                
                 agentNameSpan.className= "right-span"
                 weaponImageElement.className = "right-weapon"
                 agentDiv.appendChild(imageElement)
-                agentDiv.appendChild(agentNameSpan)
+                agentnamecontainerDiv.appendChild(agentNameSpan)
                 weaponContainer.appendChild(weaponImageElement)
                 allInformationDiv.appendChild(agentDiv)
                 allInformationDiv.appendChild(shieldHealthContainerDiv)
@@ -141,7 +150,7 @@ function populateOverlay(matchDetails){
                 agentNameSpan.className= "left-span"
                 weaponImageElement.className = "left-weapon"
                 agentDiv.appendChild(imageElement)
-                agentDiv.appendChild(agentNameSpan)
+                agentnamecontainerDiv.appendChild(agentNameSpan)
                 weaponContainer.appendChild(weaponImageElement)
                 allInformationDiv.appendChild(agentDiv)
                 allInformationDiv.appendChild(shieldHealthContainerDiv)
